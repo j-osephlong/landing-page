@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+/*
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Copse', serif;
+    font-family: 'Volkhov', serif;
+    font-family: 'Amiri', serif;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Slabo 27px', serif;
+
+    font-family: 'Monoton', cursive;
+*/
+html, body {
+	margin: 0px;
+	background-color: #ffd53d;
+	height: 100%;
+	width: 100%;
+}
+
+div.big-box
+{
+    background-color: white;
+    position: absolute;
+    width: 30%;
+    height:0;
+    padding-bottom: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.title
+{
+    position: relative;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 20px;
+    font-family: 'Libre Barcode 39 Text', cursive;
+}
+
+.highlight
+{
+    height: max-content;
+    color: white;
+    background: rgb(205,65,0);
+    padding-left: 2%;padding-right: 2%;
+    background: linear-gradient(90deg, rgba(205,65,0,1) 0%, rgba(255,145,0,1) 100%);
+}
+
+.header
+{
+    position: relative;
+    text-align: center;
+    padding-top: 5%;
+    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+}
+
+.list-item
+{
+    position: relative;
+    width: max-content;
+    height: min-content;
+    padding-top: 5%;
+    padding-left: 5%;
+    font-size: 15px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+}
