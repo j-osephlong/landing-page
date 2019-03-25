@@ -1,49 +1,89 @@
-(function(window, document, undefined){
+var box;
+var dirElm;
+var codeElm;
+var musicElm;
+var titleElm;
+var backElm;
+var aboutbgimg;
 
-// code that should be taken care of right away
+window.onload = init;
 
-    window.onload = init;
+function init(){
+    box = document.getElementsByClassName("big-box")[0];
+    dirElm = document.getElementById("dir"); 
+    codeElm = document.getElementById("code"); 
+    musicElm = document.getElementById("music"); 
+    titleElm = document.getElementById("title"); 
+    aboutbgimg = document.getElementById("about-img");
+    backElm = document.getElementById("back");
+    var currentstate = "dir";
 
-    function init(){
-        var dirElm = document.getElementById("dir"); 
-        var codeElm = document.getElementById("code"); 
-        var titleElm = document.getElementById("title"); 
-        var aboutbgimg = document.getElementById("about-img");
-        dirElm.style.transition = "transform 1s";
-        titleElm.style.transition = "transform 1s";
-        aboutbgimg.style.transition = "opacity 1s";
-        codeElm.style.transition = "opacity 1s";
+    document.getElementById("about-li").addEventListener('click', switchToAbout, false);
+    document.getElementById("code-li").addEventListener('click', switchToCode, false);
+    document.getElementById("music-li").addEventListener('click', switchToMusic, false);
+    backElm.addEventListener('click', switchToDir, false);
+}
 
-        var currentstate = "dir";
+function switchToAbout ()
+{
+    dirElm.style.transform = "translate(0,200%)";
+    titleElm.style.transform = "translate(0,225%)";
+    aboutbgimg.style.opacity = 1;
+    backElm.style.opacity = 1;
 
-        document.getElementById("about-li").addEventListener('click', 
-            function() 
-            {
-                titleElm.style.zIndex = 3;
-                dirElm.style.transform = "translate(0,200%)";
-                titleElm.style.transform = "translate(0,225%)";
+    dirElm.style.zIndex = 1;
 
-                currentstate = "about";
-                aboutbgimg.style.opacity = 1;
-            }
-            , false);
+    currentstate = "about";
+}
 
-        document.getElementById("code-li").addEventListener('click', 
-            function() 
-            {
-                dirElm.style.transform = "translate(0,200%)";
-                codeElm.style.opacity = 1;
-                currentstate = "code";
-            }
-            , false);
-        document.getElementById("music-li").addEventListener('click', 
-            function() 
-            {
-                dirElm.style.transform = "translate(0,200%)";
-                currentstate = "music";
-            }
-            , false);
+function switchToCode()
+{
+    dirElm.style.transform = "translate(0,200%)";
+    codeElm.style.opacity = 1;
+    backElm.style.opacity = 1;
+
+
+    dirElm.style.zIndex = 1;
+    codeElm.style.zIndex = 2;
+
+    currentstate = "code";
+}
+
+function switchToMusic()
+{
+    box.style.width = "600px";
+    dirElm.style.transform = "translate(0,200%)";
+    musicElm.style.opacity = 1;
+    backElm.style.opacity = 1;
+
+
+    dirElm.style.zIndex = 1;
+    musicElm.style.zIndex = 2;
+
+    currentstate = "music";
+}
+
+function switchToDir()
+{
+    switch(currentstate)
+    {
+        case "about":
+            titleElm.style.transform = "translate(0,0%)";
+            aboutbgimg.style.opacity = 0;
+            break;
+        case "code":
+            codeElm.style.opacity = 0;
+            codeElm.style.zIndex = 1;
+            break;
+        case "music":
+            musicElm.style.opacity = 0;
+            musicElm.style.zIndex = 1;
+            box.style.width = "410px";
+            break;
     }
+    // musicElm.style.opacity = 0;
+    dirElm.style.transform = "translate(0,0%)";
+    dirElm.style.zIndex = 2;
 
-
-})(window, document, undefined);
+    backElm.style.opacity = 0;
+}
