@@ -102,3 +102,27 @@ function switchToDir()
     backElm.style.opacity = 0;
     backElm.style.visibility = "hidden";    
 }
+
+var lastChar = "";
+var presses = 0;
+
+document.onkeypress = function(evt) {
+    if (currentstate != "about")
+        return;
+    evt = evt || window.event;
+    var charCode = evt.keyCode || evt.which;
+    var charStr = String.fromCharCode(charCode);
+    
+    if (charStr == "e")
+        presses = 1;
+    else if (charStr == "m" && lastChar == "e")
+        presses++;
+    else if (charStr == "i" && lastChar == "m")
+        presses++;
+    else if (charStr == "l" && lastChar == "i")
+        presses++;
+    else if (charStr == "y" && lastChar == "l" && presses == 4)
+        alert("heart emoji");
+
+    lastChar = charStr;
+};
