@@ -29,6 +29,8 @@ function switchToAbout ()
     dirElm.style.transform = "translate(0,200%)";
     titleElm.style.transform = "translate(0,225%)";
     aboutbgimg.style.opacity = 1;
+
+    backElm.style.visibility = "visible";
     backElm.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
@@ -40,8 +42,12 @@ function switchToCode()
 {
     dirElm.style.transform = "translate(0,200%)";
     codeElm.style.opacity = 1;
-    backElm.style.opacity = 1;
 
+    document.getElementById("github_link").style.opacity = 1;
+    document.getElementById("github_link").style.display = "block";
+
+    backElm.style.visibility = "visible";
+    backElm.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
     codeElm.style.zIndex = 2;
@@ -54,8 +60,12 @@ function switchToMusic()
     box.style.width = "600px";
     dirElm.style.transform = "translate(0,200%)";
     musicElm.style.opacity = 1;
-    backElm.style.opacity = 1;
 
+    document.getElementById("soundcloud_link").style.opacity = 1;
+    document.getElementById("soundcloud_link").style.display = "block";
+
+    backElm.style.visibility = "visible";
+    backElm.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
     musicElm.style.zIndex = 2;
@@ -74,11 +84,15 @@ function switchToDir()
         case "code":
             codeElm.style.opacity = 0;
             codeElm.style.zIndex = 1;
+            document.getElementById("github_link").style.opacity = 0;
+            document.getElementById("github_link").style.display = "none";
             break;
         case "music":
             musicElm.style.opacity = 0;
             musicElm.style.zIndex = 1;
             box.style.width = "410px";
+            document.getElementById("soundcloud_link").style.opacity = 0;
+            document.getElementById("soundcloud_link").style.display = "none";
             break;
     }
     // musicElm.style.opacity = 0;
@@ -86,4 +100,5 @@ function switchToDir()
     dirElm.style.zIndex = 2;
 
     backElm.style.opacity = 0;
+    backElm.style.visibility = "hidden";    
 }
