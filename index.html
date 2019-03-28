@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="mobile-style.css">
         <link rel="stylesheet" type="text/css" media="screen and (min-width: 600px)" href="desktop-style.css">
-        <script src="code.js"></script>
+        <script src="desktop-code.js" media="screen and (min-width:600px)"></script>
+        <script src="mobile-code.js" media="screen and (max-width:600px)"></script>
     </head>
 
     <body>
         <div class="backgroundimg" id="about-img" style="background-image: url('picture/p1.jpg')"></div>
         <div class="title" id="title">Joseph Long</div>
+        <div class="options">
+                <div class="option" id="github_link">
+                    <a href="https://github.com/whatHappenedToBrendanFraser" target="_blank">
+                        GITHUB
+                    </a>
+                </div>
+                <div class="option" id="soundcloud_link">
+                    <a href="https://soundcloud.com/joseph-long-13" target="_blank">
+                        SOUNDCLOUD
+                    </a>
+                </div>
+                <div class="option" id="back" style="display:block;visibility:visible">
+                    BACK TO DIRECTORY
+                </div>
+            </div>
         <div class="big-box">
             <div id="dir" class="box-topic" style="z-index: 2;">
                 <div class="header">DIRECTORY</div>
@@ -84,26 +101,12 @@
             </div>
 
             <div id="music" class="box-topic" style="opacity:0;">
-                <iframe width="582px" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/556172268&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                <iframe width="582px" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504203490&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                <iframe width="582px" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/319972959&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <iframe class="sc" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/556172268&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <iframe class="sc" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504203490&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <iframe class="sc" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/319972959&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
             </div>
         </div>
         
-        <div class="options">
-            <div class="option" id="github_link">
-                <a href="https://github.com/whatHappenedToBrendanFraser" target="_blank">
-                    GITHUB
-                </a>
-            </div>
-            <div class="option" id="soundcloud_link">
-                <a href="https://soundcloud.com/joseph-long-13" target="_blank">
-                    SOUNDCLOUD
-                </a>
-            </div>
-            <div class="option" id="back" style="display:block;visibility:visible">
-                BACK TO DIRECTORY
-            </div>
-        </div>
+        
     </body>
 </html>

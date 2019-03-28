@@ -23,14 +23,12 @@ html, body {
 div.big-box
 {
     background-color: white;
-    position: absolute;
+    position: relative;
 
-    width: 410px;
-    height:410px;
+    width: 100%;
+    margin-top: 5%;
 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     overflow: hidden;
 
     transition: all 1s;
@@ -56,8 +54,8 @@ div.big-box
 {
     position: relative;
     text-align: center;
-    padding-top: 2%;
-    font-size: 40px;
+    padding-top: 5%;
+    font-size: 15vw;
     font-family: 'Libre Barcode 39 Text', cursive;
 
     transition: transform 1s;
@@ -78,10 +76,15 @@ div.big-box
     position: relative;
     text-align: center;
     padding-top: 5%;
-    font-size: 40px;
+    font-size: 10vw;
     font-family: 'Inconsolata', monospace;
     font-weight: 700;
     
+}
+
+.sc
+{
+    width: 100%;
 }
 
 .list-item
@@ -91,7 +94,7 @@ div.big-box
     height: min-content;
     padding-top: 5%;
     padding-left: 5%;
-    font-size: 30px;
+    font-size: 8vw;
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
 }
@@ -110,10 +113,8 @@ div.big-box
 
 .options
 {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin-top: 5%;
 }
 
 .option
@@ -126,11 +127,6 @@ div.big-box
     opacity: 0;
     transition: opacity .25s;
     display: none;
-}
-
-.sc
-{
-    width: 582px;
 }
 
 a{
