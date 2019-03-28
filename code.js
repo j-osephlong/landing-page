@@ -28,7 +28,7 @@ function init(){
 
 function temp()
 {
-    alert(offset(titleElm).top)
+    alert(offset(titleElm).top + "->" + offset(document.getElementById("title_pos")).top)
 }
 
 function switchToAbout ()
