@@ -14,6 +14,7 @@ function init(){
     codeElm = document.getElementById("code"); 
     musicElm = document.getElementById("music"); 
     titleElm = document.getElementById("title"); 
+    aboutElm = document.getElementById("about"); 
     aboutbgimg = document.getElementById("about-img");
     backElm = document.getElementById("back");
     var currentstate = "dir";
@@ -21,19 +22,27 @@ function init(){
     document.getElementById("about-li").addEventListener('click', switchToAbout, false);
     document.getElementById("code-li").addEventListener('click', switchToCode, false);
     document.getElementById("music-li").addEventListener('click', switchToMusic, false);
+    titleElm.addEventListener('click', temp, false);
     backElm.addEventListener('click', switchToDir, false);
+}
+
+function temp()
+{
+    alert(offset(titleElm).top)
 }
 
 function switchToAbout ()
 {
     dirElm.style.transform = "translate(0,200%)";
-    titleElm.style.transform = "translate(0,225%)";
+    titleElm.style.transform = "translate(0,"+offset(document.getElementById("title_pos")).top+"px)";
     aboutbgimg.style.opacity = 1;
+    aboutElm.style.opacity = 1;
 
     backElm.style.visibility = "visible";
     backElm.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
+    aboutElm.style.zIndex = 2;
 
     currentstate = "about";
 }
@@ -80,6 +89,7 @@ function switchToDir()
         case "about":
             titleElm.style.transform = "translate(0,0%)";
             aboutbgimg.style.opacity = 0;
+            aboutElm.style.zIndex = 1;
             break;
         case "code":
             codeElm.style.opacity = 0;
@@ -126,3 +136,10 @@ document.onkeypress = function(evt) {
 
     lastChar = charStr;
 };
+
+function offset(el) {
+    var rect = el.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+}
