@@ -10,6 +10,7 @@ var options;
 window.onload = init;
 
 function init(){
+
     box = document.getElementsByClassName("big-box")[0];
     options = document.getElementsByClassName("options")[0];
     box.style.height = box.offsetWidth+"px";
@@ -43,6 +44,7 @@ function switchToAbout ()
 
     backElm.style.visibility = "visible";
     backElm.style.opacity = 1;
+    options.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
     aboutElm.style.zIndex = 2;
@@ -54,13 +56,14 @@ function switchToCode()
 {
     dirElm.style.transform = "translate(0,200%)";
     codeElm.style.opacity = 1;
-    box.style.height = "100%";
+    box.style.height = document.body.clientHeight-(offset(box).top)+"px";
 
     document.getElementById("github_link").style.opacity = 1;
     document.getElementById("github_link").style.display = "block";
 
     backElm.style.visibility = "visible";
     backElm.style.opacity = 1;
+    options.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
     codeElm.style.zIndex = 2;
@@ -73,7 +76,7 @@ function switchToMusic()
     // box.style.width = "600px";
     dirElm.style.transform = "translate(0,200%)";
     musicElm.style.opacity = 1;
-    box.style.height = "100%";
+    box.style.height = document.body.clientHeight-(offset(box).top)+"px";
 
 
     document.getElementById("soundcloud_link").style.opacity = 1;
@@ -81,6 +84,7 @@ function switchToMusic()
 
     backElm.style.visibility = "visible";
     backElm.style.opacity = 1;
+    options.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
     musicElm.style.zIndex = 2;
@@ -96,10 +100,13 @@ function switchToDir()
             titleElm.style.transform = "translate(0,0%)";
             aboutbgimg.style.opacity = 0;
             aboutElm.style.zIndex = 1;
+            options.style.opacity = 0;
             break;
         case "code":
             codeElm.style.opacity = 0;
             codeElm.style.zIndex = 1;
+            options.style.opacity = 0;
+
             box.style.height = box.offsetWidth+"px";
             document.getElementById("github_link").style.opacity = 0;
             document.getElementById("github_link").style.display = "none";
@@ -107,6 +114,8 @@ function switchToDir()
         case "music":
             musicElm.style.opacity = 0;
             musicElm.style.zIndex = 1;
+            options.style.opacity = 0;
+
             box.style.height = box.offsetWidth+"px";
             document.getElementById("soundcloud_link").style.opacity = 0;
             document.getElementById("soundcloud_link").style.display = "none";

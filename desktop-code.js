@@ -9,6 +9,7 @@ var aboutbgimg;
 window.onload = init;
 
 function init(){
+    alert("desktop");
     box = document.getElementsByClassName("big-box")[0];
     box.style.height = box.offsetWidth+"px";
     dirElm = document.getElementById("dir"); 
