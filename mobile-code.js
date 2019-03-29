@@ -9,6 +9,18 @@ var options;
 
 window.onload = init;
 
+(function(window, location) {
+    history.replaceState(null, document.title, location.pathname+"#!/dir");
+    history.pushState(null, document.title, location.pathname);
+
+    window.addEventListener("popstate", function() {
+      if(location.hash === "#!/dir") {
+            history.replaceState(null, document.title, location.pathname);
+            switchToDir();
+      }
+    }, false);
+}(window, location));
+
 function init(){
 
     box = document.getElementsByClassName("big-box")[0];
@@ -50,6 +62,8 @@ function switchToAbout ()
     aboutElm.style.zIndex = 2;
 
     currentstate = "about";
+    history.replaceState(null, document.title, location.pathname+"#!/dir");
+    history.pushState(null, document.title, location.pathname);
 }
 
 function switchToCode()
@@ -69,6 +83,8 @@ function switchToCode()
     codeElm.style.zIndex = 2;
 
     currentstate = "code";
+    history.replaceState(null, document.title, location.pathname+"#!/dir");
+    history.pushState(null, document.title, location.pathname);
 }
 
 function switchToMusic()
@@ -90,6 +106,8 @@ function switchToMusic()
     musicElm.style.zIndex = 2;
 
     currentstate = "music";
+    history.replaceState(null, document.title, location.pathname+"#!/dir");
+    history.pushState(null, document.title, location.pathname);
 }
 
 function switchToDir()
