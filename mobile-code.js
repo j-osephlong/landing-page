@@ -7,6 +7,10 @@ var backElm;
 var aboutbgimg;
 var options;
 
+var soundcloudLinks = ['https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/556172268&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+                        , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504203490&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+                        , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/319972959&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'];
+
 window.onload = init;
 
 (function(window, location) {
@@ -33,7 +37,9 @@ function init(){
     aboutElm = document.getElementById("about"); 
     aboutbgimg = document.getElementById("about-img");
     backElm = document.getElementById("back");
+
     var currentstate = "dir";
+    initmusic();
 
     document.getElementById("about-li").addEventListener('click', switchToAbout, false);
     document.getElementById("code-li").addEventListener('click', switchToCode, false);
@@ -41,6 +47,21 @@ function init(){
     titleElm.addEventListener('click', temp, false);
     backElm.addEventListener('click', switchToDir, false);
 }
+
+function initmusic()
+{
+    for (l in soundcloudLinks)
+    {
+        elm = document.createElement("iframe");
+        elm.setAttribute("class", "sc");
+        elm.setAttribute("height", "300");
+        elm.setAttribute("scrolling", "no");
+        elm.setAttribute("frameborder", "no");
+        elm.setAttribute("src", soundcloudLinks[l]);
+        musicElm.appendChild(elm);
+    }
+}
+
 
 function temp()
 {
