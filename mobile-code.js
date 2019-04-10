@@ -139,6 +139,7 @@ function switchToDir()
             titleElm.style.transform = "translate(0,0%)";
             aboutbgimg.style.opacity = 0;
             aboutElm.style.zIndex = 1;
+            aboutElm.style.opacity = 0;
             options.style.opacity = 0;
             break;
         case "code":

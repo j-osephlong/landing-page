@@ -81,6 +81,22 @@ div.big-box
     
 }
 
+.about-block
+{
+    position: relative;
+    width: 88%;
+    height: max-content;
+    margin: 4%;
+    padding: 2%;
+    background-color: rgb(93, 132, 238);
+
+    font-size: 28px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+
+    text-align: center;
+}
+
 #mobile-resize-helper
 {
     padding-bottom: 5%;

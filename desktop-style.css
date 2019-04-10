@@ -27,7 +27,6 @@ div.big-box
 
     width: 410px;
     height:410px;
-
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -82,6 +81,22 @@ div.big-box
     font-family: 'Inconsolata', monospace;
     font-weight: 700;
     
+}
+
+.about-block
+{
+    position: relative;
+    width: 88%;
+    height: max-content;
+    margin: 4%;
+    padding: 2%;
+    background-color: rgb(93, 132, 238);
+
+    font-size: 28px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 400;
+
+    text-align: center;
 }
 
 .list-item
