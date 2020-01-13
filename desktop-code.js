@@ -8,7 +8,8 @@ var aboutbgimg;
 
 var soundcloudLinks = ['https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/556172268&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
                         , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504203490&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
-                        , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/319972959&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'];
+                        , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/319972959&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+                        , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/673107488&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'];
 
 window.onload = init;
 
