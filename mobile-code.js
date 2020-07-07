@@ -7,10 +7,12 @@ var backElm;
 var aboutbgimg;
 var options;
 
-var soundcloudLinks = ['https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/556172268&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+var soundcloudLinks = [   'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/673107488&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+                        , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/556172268&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
                         , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504203490&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
-                        , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/319972959&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'];
-
+                        , 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/319972959&color=%232a5e80&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+                      ];
+                      
 window.onload = init;
 
 (function(window, location) {
@@ -169,29 +171,6 @@ function switchToDir()
     backElm.style.visibility = "hidden";    
 }
 
-var lastChar = "";
-var presses = 0;
-
-document.onkeypress = function(evt) {
-    if (currentstate != "about")
-        return;
-    evt = evt || window.event;
-    var charCode = evt.keyCode || evt.which;
-    var charStr = String.fromCharCode(charCode);
-    
-    if (charStr == "e")
-        presses = 1;
-    else if (charStr == "m" && lastChar == "e")
-        presses++;
-    else if (charStr == "i" && lastChar == "m")
-        presses++;
-    else if (charStr == "l" && lastChar == "i")
-        presses++;
-    else if (charStr == "y" && lastChar == "l" && presses == 4)
-        alert("heart emoji");
-
-    lastChar = charStr;
-};
 
 function offset(el) {
     var rect = el.getBoundingClientRect(),
@@ -199,3 +178,5 @@ function offset(el) {
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
+
+//V2hlbiBJIHRha2UgeW91IHRvIHRoZSBWYWxsZXksIHlvdeKAmWxsIHNlZSB0aGUgYmx1ZSBoaWxscyBvbiB0aGUgbGVmdCBhbmQgdGhlIGJsdWUgaGlsbHMgb24gdGhlIHJpZ2h0LCB0aGUgcmFpbmJvdyBhbmQgdGhlIHZpbmV5YXJkcyB1bmRlciB0aGUgcmFpbmJvdyBsYXRlIGluIHRoZSByYWlueSBzZWFzb24sIGFuZCBtYXliZSB5b3XigJlsbCBzYXksIOKAnFRoZXJlIGl0IGlzLCB0aGF04oCZcyBpdCHigJ0gQnV0IEnigJlsbCBzYXkuIOKAnEEgbGl0dGxlIGZhcnRoZXIu4oCdIFdl4oCZbGwgZ28gb24sIEkgaG9wZSwgYW5kIHlvdeKAmWxsIHNlZSB0aGUgcm9vZnMgb2YgdGhlIGxpdHRsZSB0b3ducyBhbmQgdGhlIGhpbGxzaWRlcyB5ZWxsb3cgd2l0aCB3aWxkIG9hdHMsIGEgYnV6emFyZCBzb2FyaW5nIGFuZCBhIHdvbWFuIHNpbmdpbmcgYnkgdGhlIHNoYWRvd3Mgb2YgYSBjcmVlayBpbiB0aGUgZHJ5IHNlYXNvbiwgYW5kIG1heWJlIHlvdeKAmWxsIHNheSwg4oCcTGV04oCZcyBzdG9wIGhlcmUsIHRoaXMgaXMgaXQh4oCdIEJ1dCBJ4oCZbGwgc2F5LCDigJxBIGxpdHRsZSBmYXJ0aGVyIHlldC7igJ0gV2XigJlsbCBnbyBvbiwgYW5kIHlvdeKAmWxsIGhlYXIgdGhlIHF1YWlsIGNhbGxpbmcgb24gdGhlIG1vdW50YWluIGJ5IHRoZSBzcHJpbmdzIG9mIHRoZSByaXZlciwgYW5kIGxvb2tpbmcgYmFjayB5b3XigJlsbCBzZWUgdGhlIHJpdmVyIHJ1bm5pbmcgZG93bndhcmQgdGhyb3VnaCB0aGUgd2lsZCBoaWxscyBiZWhpbmQsIGJlbG93LCBhbmQgeW914oCZbGwgc2F5LCDigJxJc27igJl0IHRoYXQgdGhlIFZhbGxleT/igJ0gQW5kIGFsbCBJIHdpbGwgYmUgYWJsZSB0byBzYXkgaXMg4oCcRHJpbmsgdGhpcyB3YXRlciBvZiB0aGUgc3ByaW5nLCByZXN0IGhlcmUgYXdoaWxlLCB3ZSBoYXZlIGEgbG9uZyB3YXkgeWV0IHRvIGdvIGFuZCBJIGNhbuKAmXQgZ28gd2l0aG91dCB5b3Uu

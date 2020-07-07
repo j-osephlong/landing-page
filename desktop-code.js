@@ -62,6 +62,7 @@ function switchToAbout ()
     aboutElm.style.opacity = 1;
 
     backElm.style.visibility = "visible";
+    backElm.style.color = "white";
     backElm.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
@@ -79,6 +80,7 @@ function switchToCode()
     document.getElementById("github_link").style.display = "block";
 
     backElm.style.visibility = "visible";
+    backElm.style.color = "black";
     backElm.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
@@ -97,6 +99,7 @@ function switchToMusic()
     document.getElementById("soundcloud_link").style.display = "block";
 
     backElm.style.visibility = "visible";
+    backElm.style.color = "black";
     backElm.style.opacity = 1;
 
     dirElm.style.zIndex = 1;
@@ -136,30 +139,6 @@ function switchToDir()
     backElm.style.opacity = 0;
     backElm.style.visibility = "hidden";    
 }
-
-var lastChar = "";
-var presses = 0;
-
-document.onkeypress = function(evt) {
-    if (currentstate != "about")
-        return;
-    evt = evt || window.event;
-    var charCode = evt.keyCode || evt.which;
-    var charStr = String.fromCharCode(charCode);
-    
-    if (charStr == "e")
-        presses = 1;
-    else if (charStr == "m" && lastChar == "e")
-        presses++;
-    else if (charStr == "i" && lastChar == "m")
-        presses++;
-    else if (charStr == "l" && lastChar == "i")
-        presses++;
-    else if (charStr == "y" && lastChar == "l" && presses == 4)
-        alert("heart emoji");
-
-    lastChar = charStr;
-};
 
 function offset(el) {
     var rect = el.getBoundingClientRect(),

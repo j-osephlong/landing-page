@@ -90,13 +90,11 @@ div.big-box
     height: max-content;
     margin: 4%;
     padding: 2%;
-    background-color: rgb(93, 132, 238);
 
     font-size: 28px;
     font-family: 'Inconsolata', monospace;
     font-weight: 400;
 
-    text-align: center;
 }
 
 .list-item
