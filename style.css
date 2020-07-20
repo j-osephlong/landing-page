@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text'); /*Barcode title font
+    font-family: 'Libre Barcode 39 Text', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700'); /*Header font
+    font-family: 'Inconsolata', monospace; */
+
+body {
+    margin: 0;
+    background-color: #ffd53d;
+
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    opacity: .5s;
+}
+*::-webkit-scrollbar-track {
+    background-color: none;
+    opacity: .5s;
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 2em;
+    background-color: #f5f5f5;
+    width: 8px;
+    opacity: .5s;
+
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    padding-top: 5%;
+    font-size: 40px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1em;
+    display: inline-block;
+    margin: 0;
+}
+
+a {
+    background-color: #0072ff;
+    font-weight: 700;
+}
+
+a:link {
+    text-decoration: none;
+    background-color: #0072ff;
+    font-weight: 700;
+}
+  
+a:visited {
+    text-decoration: none;
+    background-color: #0072ff;
+    font-weight: 700;
+}
+
+#app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#title
+{
+    position: relative;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 3em;
+    font-family: 'Libre Barcode 39 Text', cursive;
+    transition: all 1s;
+    z-index: 3;
+    top: 0;
+}
+
+#container-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 52vh;
+    height: 52vh;
+    box-sizing: border-box;
+
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+    overflow: hidden;
+    z-index: 2;
+    transition: all .5s;
+}
+
+.sub-box {
+    position: absolute;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding: 2vh;
+
+    overflow: auto;
+    overflow-y: overlay;
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+    z-index: -2;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.sub-box.active{
+    opacity: 1;
+    z-index: 2;
+}
+
+#dir.sub-box {
+    opacity: 1;
+    top: 100%;
+}
+
+#dir.sub-box.active {
+    opacity: 1;
+    top: 0;
+}
+
+#music {
+    padding: 0;
+}
+
+#container-box.music {
+    width: 68vh;
+}
+
+.sc-player {
+    width: 68vh;
+}
+
+.button {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.8em;
+    border-radius: 0;
+    padding: 1vh;
+    box-sizing: border-box;
+
+    width: 100%;
+    margin-top: 10px;
+
+    transition: background-color .5s;
+    transition: border-radius 1s;
+    background-color: white;
+}
+
+.button:hover{
+    background-color: #f5f5f5;
+    border-radius: .5em;
+}
+
+.gh {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.8em;
+    border-radius: 0;
+    padding: 1vh;
+    box-sizing: border-box;
+
+    width: 100%;
+    margin-top: 10px;
+
+    transition: background-color .5s;
+    transition: border-radius 1s;
+    background-color: white;
+}
+
+.gh:hover {
+    background-color: #f5f5f5;
+    border-radius: .5em;
+}
+
+.gh .tag {
+    font-size: .4em;
+    font-weight: 700;
+    padding: .8vh;
+    border-radius: 2em;
+    vertical-align: bottom;
+    box-sizing: border-box;
+    margin-right: 5px;
+    width: max-content;
+    border: #ffb6b6 solid;
+    float: right;
+
+    opacity: .5;
+    transition: opacity .5s;
+}
+
+.gh .tag:hover {
+    opacity: 1;
+}
+
+#nav-buttons {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: all .5s;
+}
+
+.nav-button {
+    min-width: 8vh;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    border-radius: 2em;
+    padding: 1vh;
+    text-align: center;
+    
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    background-color: white;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all .5s;
+    z-index: 1;
+
+    display: none;
+}
+
+.nav-button a {
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+}
+
+#nav-buttons.active {
+    bottom: 10%;
+}
+
+.nav-button:hover {
+    background-color: #f5f5f5;
+}
+
+.nav-button.active {
+    display: block;
+} 

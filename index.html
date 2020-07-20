@@ -1,177 +1,97 @@
 <!DOCTYPE html>
-<!-- a secret
-	Zm9yIHdobyBoYXZlIGxvc3QgYW5kIGxvdmVkLA0KYXMgSSBoYXZlIGxvc3QsIGFuZCBsb3ZlZCwgYW5kIGxvdmUgd2hvIEkgaGF2ZSBsb3N0Lg0KdGhleSBrbm93IHRoZWlyIG5hbWVzLCBhbmQgaG9wZWZ1bGx5IHdpbGwgcmVtZW1iZXIgbWluZS4NCmEgbWVzc2FnZSBmb3IgdGhlbS4=
-	YW5vdGhlciBsaWVzIGluIHRoZSBqYXZhc2NyaXB0
--->
-<html>
-	<head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138172240-1"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.0.0/cash.min.js"></script> <!--Cash.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--Vue.js-->
+    <script src="me.js"></script> <!--main-->
+    <link rel="stylesheet" type="text/css" href="style.css">  <!--style-->
+    <link rel="stylesheet" type="text/css" href="mobile-style.css">  <!--style-->
 
-        gtag('config', 'UA-138172240-1');
-        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>j-osephlong</title>
+</head>
+<body>
+    
+    <div id="app">
+        <div id="title">JOSEPH LONG</div>
 
+        <div id="container-box" v-bind:class="[state === 'code' || state === 'music' ? 'fill' : '', state === 'music' ? 'music' : '']"> <!-- fill subclass for mobile screens -->
+            <div id="dir" class="sub-box" v-bind:class="state == 'dir' ? 'active' : ''">
+                <h1>Directory</h1>
+                <div class="button" onclick="app.state = 'me';pushBackState();moveTitle()"><b>/</b>me<b>/</b></div>
+                <div class="button" onclick="app.state = 'code';pushBackState();"><b>/</b>my github projects<b>/</b></div>
+                <div class="button" onclick="app.state = 'music';pushBackState();"><b>/</b>my music<b>/</b></div>
+            </div>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="mobile-style.css">
-        <link rel="stylesheet" type="text/css" media="screen and (min-width: 600px)" href="desktop-style.css">
-        <script type="text/javascript">
-
-            // This loads JS files in the head element
-            function loadJS(url)
-            {
-                // adding the script tag to the head
-                var head = document.getElementsByTagName('head')[0];
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = url;
-        
-                // fire the loading
-                head.appendChild(script);
-            }
-
-            //media query js
-            if (window.matchMedia("(max-width: 600px)").matches)
-            {
-                loadJS("mobile-code.js");
-            } else {loadJS("desktop-code.js");}
-            
-        </script>
-    </head>
-
-    <body>
-        <div class="backgroundimg" id="about-img" style="background-image: url('picture/p1.jpg')"></div>
-        <div id="mobile-resize-helper">
-            <div class="title" id="title">Joseph Long</div>
-        </div>
-        <div class="big-box">
-            <div id="dir" class="box-topic" style="z-index: 2;">
-                <div class="header">DIRECTORY</div>
-                <div class="list">
-                    <div class="list-item" id="about-li"><b>/</b>about this <span class="highlight">guy</span> here<b>/</b></div>
-                    <div class="list-item" id="code-li"><b>/</b>my <span class="highlight">code</span> stuff<b>/</b></div>
-                    <div class="list-item" id="music-li"><b>/</b>my <span class="highlight">music</span> stuff<b>/</b></div>
+            <div id="me" class="sub-box" v-bind:class="state === 'me' ? 'active' : ''">
+                <div style="width: 100%;height: 3em;" id="title-spacer"></div>
+                <div class="button" style="background-color: #f5f5f5;"><b>/</b>me<b>/</b></div>
+                <div style="padding: 1vh;font-size: 1.2em;">
+                    <p>I'm a second year CS student at UNBSJ, Canada. I develop software and write music in my spare time, when I have the time.</p>
                 </div>
-            </div>
-
-            <div id="about" class="box-topic" style="opacity:0;">
-                <div class="header" id="title_pos" style="opacity:0;">a</div>
-
-                <div class="about-block">‣Second year CS student at<br><b>UNB SJ</b></div>
-                <div class="about-block">‣Self taught pianist</div>
-                <div class="about-block">‣Self taught developer</div>
-
-            </div>
-
-            <div id="code" class="box-topic" style="opacity:0;">
-                <div class="header">GITHUB PROJECTS</div>
-                <div class="list">
-
-                    <div class="list-item"><a target="_blank" href="https://github.com/j-osephlong/Picto"><b>/</b>Picto (Chat App)<b>/</b></a>
-                        <div class="tags">
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                Python/SQL</span>
-				            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                JS/HTML/CSS</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,205,89,1) 0%, rgba(0,116,105,1) 100%);">
-                                2020</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,144,0,1) 0%, rgba(255,226,0,1) 100%);">
-                                Quarantine</span>
-                            </div>
-                            </div>
-			
-                    <div class="list-item"><a target="_blank" href="https://github.com/j-osephlong/Hotel-Project"><b>/</b>Hotel-Booking-Server<b>/</b></a>
-                        <div class="tags">
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                Python/SQL</span>
-				            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                JS/HTML/CSS</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,205,89,1) 0%, rgba(0,116,105,1) 100%);">
-                                2019</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,144,0,1) 0%, rgba(255,226,0,1) 100%);">
-                                School</span>
-                            </div>
-                            </div>
-
-                    <div class="list-item"><a target="_blank" href="https://github.com/j-osephlong/Blume"><b>/</b>Blume<b>/</b></a>
-                        <div class="tags">
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                C#</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,205,89,1) 0%, rgba(0,116,105,1) 100%);">
-                                2019</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(139,0,0,1) 0%, rgba(255,0,26,1) 100%);">
-                                    WIP</span>
-                            </div>
-                            </div>
-                    <div class="list-item"><a target="_blank" href="https://github.com/j-osephlong/python-arithmetic"><b>/</b>python-arithmetic<b>/</b></a>
-                        <div class="tags">
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                Python</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,205,89,1) 0%, rgba(0,116,105,1) 100%);">
-                                2016</span>
-                        </div>
-                        </div>
-                    <div class="list-item"><a target="_blank" href="https://github.com/j-osephlong/Python-Text-Editor"><b>/</b>python-text-editor<b>/</b></a>
-                        <div class="tags">
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                Python</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,205,89,1) 0%, rgba(0,116,105,1) 100%);">
-                                2017</span>
-                        </div>
-                        </div>
-                    <div class="list-item"><a target="_blank" href="https://github.com/j-osephlong/TicAI"><b>/</b>TicAI<b>/</b></a>
-                        <div class="tags">
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                Java</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,205,89,1) 0%, rgba(0,116,105,1) 100%);">
-                                2019</span>
-                        </div>
-                        </div>
-                    <div class="list-item"><a target="_blank" href="https://github.com/scanTronTeam3/scanTronIDE"><b>/</b>ScanTron<b>/</b></a>
-                        <div class="tags">
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                Java</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,205,89,1) 0%, rgba(0,116,105,1) 100%);">
-                                2019</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,144,0,1) 0%, rgba(255,226,0,1) 100%);">
-                                School</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,63,139,1) 0%, rgba(98,101,255,1) 100%);">
-                                Group</span>
-                        </div>
-                        </div>
-                    <div class="list-item"><a target="_blank" href="https://github.com/j-osephlong/landing-page"><b>/</b>landing-page(this)<b>/</b></a>
-                        <div class="tags">
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(205,0,125,1) 0%, rgba(116,0,82,1) 100%);">
-                                HTML/CSS/JS</span>
-                            <span class="tag" style="background: linear-gradient(90deg, rgba(0,205,89,1) 0%, rgba(0,116,105,1) 100%);">
-                                2019</span>
-                        </div>
-                        </div>
-                </div>
-            </div>
-
-            <div id="music" class="box-topic" style="opacity:0;"></div>
                 
-            </div>
-            <div class="options">
-                <div class="option" id="github_link">
-                    <a href="https://github.com/j-osephlong" target="_blank">
-                        MORE ON GITHUB
+                <div style="position: absolute;bottom: 3vh;left: 3vh;">
+                    <a href='https://www.github.com/j-osephlong' target='_blank'>
+                        <p style="display:block;font-size: 1em;">github</p>
+                    </a>
+                    <a href='https://www.soundcloud.com/joseph-long-13' target='_blank'>
+                        <p style="display:block;font-size: 1em;">soundcloud</p>
                     </a>
                 </div>
-                <div class="option" id="soundcloud_link">
-                    <a href="https://soundcloud.com/joseph-long-13" target="_blank">
-                        SOUNDCLOUD
-                    </a>
-                </div>
-                <div class="option" id="back" style="display:block;visibility:visible">
-                    BACK TO DIRECTORY
-                </div>
             </div>
-        
-    </body>
+            
+            <div id="code" class="sub-box" v-bind:class="state === 'code' ? 'active' : ''">
+                <h1>GITHUB PROJECTS</h1>
+                <gh-project 
+                    v-for="project in ghProjects"
+                    v-bind:project="project">
+                </gh-project>
+            </div>
+
+            <div id="music" class="sub-box" v-bind:class="state === 'music' ? 'active' : ''">
+                <sc-song 
+                    v-for="song in scLinks"
+                    v-bind:link="song">
+                </sc-song>
+            </div>
+        </div>
+
+        <div id="nav-buttons" 
+            v-bind:class="state !== 'dir' ? 'active' : ''">
+            <div class="nav-button" v-bind:class="state === 'code' ? 'active' : ''">
+                <a href='https://www.github.com/j-osephlong' target='_blank'>
+                More on Github</a></div>
+            <div class="nav-button" v-bind:class="state === 'music' ? 'active' : ''">
+                <a href='https://www.soundcloud.com/joseph-long-13' target='_blank'>
+                More on Soundcloud</a></div>
+            <div class="nav-button active" id="back-button"
+                onclick="app.state = 'dir';$('#title').css('top', '0px')">
+                Back</div>
+        </div>
+    </div>
+
+</body>
 </html>
+
+<!-- 
+    
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    background-color: white;
+    position: absolute;
+    padding: 1vw;
+    border-radius: 2em;
+    width: 8%;
+    text-align: center;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all .5s;
+    z-index: -1;
+
+
+    ACTIVE CLASS FOR bottom: 10%
+
+-->

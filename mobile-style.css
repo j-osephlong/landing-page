@@ -1,0 +1,50 @@
+@media (max-width: 40em) {
+    #title {
+        padding-top: 8%;
+        padding-bottom: 8%;
+    }
+
+    #title-spacer {
+        display: none;
+    }
+
+    #container-box {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    
+        width: 100vw;
+        height: 100vw;
+    }
+
+    #container-box.fill {
+        height: calc(100vh - 24%);
+    }
+
+    #nav-buttons {
+        width: fit-content;
+    }
+
+    #nav-buttons.active {
+        bottom: 0%;
+        margin-bottom: 4%;
+    }
+
+    .nav-button {
+        margin-left: none;
+        margin-right: 10px;
+    }
+
+    .nav-button.active {
+        display: inline-block;
+    }
+
+    #container-box.music  {
+        width: 100%;
+    }
+
+    .sc-player {
+        width: 100%;
+    }
+}
