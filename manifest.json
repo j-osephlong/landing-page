@@ -3,7 +3,7 @@
     "lang": "English",
     "name": "j-osephlong",
     "short_name": "j-oseph",
-    "scope": "/landing-page/",
+    "scope": "/",
     "display": "fullscreen",
     "start_url": "https://j-osephlong.github.io/landing-page",
     "background_color": "transparent",
