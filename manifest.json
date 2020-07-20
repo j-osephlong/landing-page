@@ -4,7 +4,7 @@
     "name": "j-osephlong",
     "short_name": "j-oseph",
     "scope": "/",
-    "display": "fullscreen",
+    "display": "standalone",
     "start_url": "https://j-osephlong.github.io/landing-page",
     "background_color": "transparent",
     "theme_color": "transparent",
