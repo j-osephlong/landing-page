@@ -51,6 +51,12 @@ $(()=>{
                     tags: ['Python-SQL-Web', '2020', 'Quarantine']
                 },
                 {
+                    name: 'j-LC3',
+                    link: 'https://github.com/j-osephlong/j-LC3',
+                    desc: 'Little Computer-3 assembler/simulator written in Python.',
+                    tags: ['Python-Asm', '2020', 'Quarantine']
+                },
+                {
                     name: 'Blume',
                     link: 'https://github.com/j-osephlong/Blume',
                     desc: 'Game rendering engine that render\'s to the windows command prompt.',
