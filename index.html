@@ -72,7 +72,7 @@
             </div>
 
             <div id="music" class="sub-box" v-bind:class="state === 'music' ? 'active' : ''">
-                <sc-song 
+                <sc-song v-show="state === 'music'"
                     v-for="song in scLinks"
                     v-bind:link="song">
                 </sc-song>
