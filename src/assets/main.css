@@ -1,0 +1,19 @@
+@import "./base.css";
+
+@media (min-width: 0px) {
+    body {
+        display: flex;
+        place-items: center;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    #app {
+        display: block;
+        /* padding: 0 2rem; */
+
+        width: 100%;
+        height: 100%;
+    }
+}
