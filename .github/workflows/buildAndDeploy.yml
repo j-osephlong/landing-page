@@ -35,19 +35,10 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Typescript (tsc) Build/Push
-        # You may pin to the exact commit or the version.
-        # uses: FuLagann/tsc-build-push@36d793b68b1fb1b9342eedb3d16359355175c364
-        uses: FuLagann/tsc-build-push@v1
-        with:
-          # The name of a contributor of the repository, used for pushing to git.
-          user-name: j-osephlong
-          # The email of a contributor of the repository, used for pushing to git.
-          user-email: jlong.anthony@live.ca
-          # The commit message that will appear when a build has completed.
-          message: Automatically built unbuilt typescript
+      - name: Build project (Vue TS)
+        run: npm exec -c "vue-tsc"
 
-      - name: Build project
+      - name: Build project (Vite Build)
         run: npm exec -c "vite build --base=./"
 
       - name: Push
