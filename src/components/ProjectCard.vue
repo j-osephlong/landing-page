@@ -54,11 +54,15 @@ let isExpanded = ref(false)
 .project-bg {
     font-family: "Fira Sans", sans-serif;
 
-    width: 75vh;
+    width: 100%;
+    max-width: 75vh;
+    height: fit-content;
 
     border-radius: 24px;
     padding: 3vmax;
     margin: 1vh;
+
+    break-inside: avoid;
 }
 
 .project-bg .tags {

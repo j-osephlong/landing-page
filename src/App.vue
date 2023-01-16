@@ -3,6 +3,9 @@ import { onMounted, ref } from 'vue';
 import JLongHeader from './components/JLongHeader.vue';
 import ScrollHint from './components/ScrollHint.vue';
 import BioSection from './components/BioSection.vue';
+import ProjectSection from './components/ProjectSection.vue';
+import { Tags } from './Tag';
+import { Projects } from './Project';
 
 let headerCollapsed = ref(false)
 
@@ -29,6 +32,8 @@ onMounted(() => {
     <main>
         <ScrollHint :isHidden="headerCollapsed" />
         <BioSection />
+        <ProjectSection :tags="Object.values(Tags)" :projects="Projects" />
+        <footer>Joseph Long, 2023</footer>
     </main>
 </template>
 
@@ -42,5 +47,15 @@ main {
 
 header {
     z-index: 2;
+}
+
+footer {
+    text-align: center;
+    padding: 3vmax;
+    padding-bottom: 4vmax;
+
+    font-family: "Fira Sans", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 </style>
