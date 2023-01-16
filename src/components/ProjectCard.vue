@@ -37,7 +37,7 @@ let isExpanded = ref(false)
         </div>
         <div class="buttons-container">
             <CardButton @click="() => { isExpanded = !isExpanded }" v-if="project.skills.length > 0">
-                {{ isExpanded? "Show Skills Used": "Show Less" }}
+                {{ !isExpanded ? "Show Skills Used" : "Show Less" }}
             </CardButton>
             <CardButton @click="() => { if (project.link) openLink(project.link) }">
                 Check it Out
