@@ -49,6 +49,9 @@ import LinkCard from './LinkCard.vue';
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
 
 #title {

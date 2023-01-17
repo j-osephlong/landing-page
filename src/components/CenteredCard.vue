@@ -14,6 +14,7 @@ export default {
 .centered-card {
     position: relative;
     width: 75vh;
+    max-width: 100%;
     margin: 1vh;
     margin-left: 2.5%;
     margin-right: 2.5%;

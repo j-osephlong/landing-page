@@ -6,6 +6,7 @@ import BioSection from './components/BioSection.vue';
 import ProjectSection from './components/ProjectSection.vue';
 import { Tags } from './Tag';
 import { Projects } from './Project';
+import BgCanvas from './components/BgCanvas.vue';
 
 let headerCollapsed = ref(false)
 
@@ -28,6 +29,7 @@ onMounted(() => {
 </script>
 
 <template>
+    <!-- <BgCanvas /> -->
     <JLongHeader :isCollapsed="headerCollapsed" />
     <main>
         <ScrollHint :isHidden="headerCollapsed" />
