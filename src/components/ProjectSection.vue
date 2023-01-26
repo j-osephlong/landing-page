@@ -11,10 +11,11 @@ let props = defineProps<{
     projects: Project[]
 }>()
 
-let currentFilter = ref<Tag>({ name: "none" })
+const noneTag: Tag = { name: "none" }
+let currentFilter = ref<Tag>(noneTag)
 
 let filteredList = computed(() => (currentFilter.value.name != "none" ?
-    props.projects.filter(project => project.tags.includes(currentFilter.value)) :
+    props.projects.filter(project => project.tags.filter(t => t.name == currentFilter.value.name).length > 0) :
     props.projects
 ).reduce((result: Project[][], value, index, array) => {
     if (index % 2 === 0)
@@ -31,15 +32,19 @@ let filteredList = computed(() => (currentFilter.value.name != "none" ?
             <div id="title">Projects and Products</div>
         </CenteredCard>
         <div id="filter-row">
-            <div v-for="tag in tags" v-bind:key="tag.name" v-on:click="() => { currentFilter = tag }"
-                :class="['filter-tag', { selected: currentFilter.name === tag.name }]">
+            <div v-for="tag in tags" v-bind:key="tag.name" v-on:click="() => {
+                if (currentFilter.name == tag.name)
+                    currentFilter = noneTag
+                else
+                    currentFilter = tag
+            }" :class="['filter-tag', { selected: currentFilter.name === tag.name }]">
                 {{ tag.name }}
             </div>
         </div>
         <div id="projects-container">
             <!-- <ProjectCard v-for="project in filteredList" v-bind:key="project.name" v-bind:project="project">
             </ProjectCard> -->
-            <div class="project-pair-row" v-for="pair in filteredList" :key="pair[0].name">
+            <div class="project-pair-row" v-for="pair in     filteredList" :key="pair[0].name">
                 <ProjectCard :project="pair[0]" />
                 <ProjectCard v-if="pair.length == 2" :project="pair[1]" />
             </div>

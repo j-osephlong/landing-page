@@ -67,6 +67,8 @@ header {
     height: 80%;
     width: 100%;
 
+    pointer-events: none;
+
     /* background-color: var(--color-text); */
 }
 
@@ -80,6 +82,8 @@ header {
 
     padding: 1vmax 2vmax;
     border-radius: 1.5vh;
+
+    pointer-events: all;
 }
 
 .collapsed .title #title-background {
