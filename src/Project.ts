@@ -72,8 +72,8 @@ let Projects: Project[] = [
 			Skills.githubActions,
 		],
 		tags: [Tags.reactJS, Tags.webDev],
-		bgColorHex: "#C8E9A0",
-		fgColorHex: "#000000",
+		bgColorHex: "#40476D",
+		// fgColorHex: "#000000",
 		link: "https://j-osephlong.github.io/microPictochat",
 		secondaryLinkName: "GitHub",
 		secondaryLinkHref: "https://github.com/j-osephlong/microPictochat",
@@ -101,6 +101,15 @@ let Projects: Project[] = [
 		bgColorHex: "#60D394",
 		fgColorHex: "#000000",
 		link: "https://github.com/j-osephlong/InfoDroid",
+	}),
+	new Project({
+		name: "SignalMapper",
+		description:
+			"An Android app which collects dBm and GPS measurements passively, and maps them out. Written for my 2022 Winter Mobile Communications course.",
+		tags: [Tags.school, Tags.android],
+		skills: [Skills.jetpackCompose, Skills.material3],
+		bgColorHex: "#2A4D14",
+		link: "https://github.com/j-osephlong/SignalMapper",
 	}),
 	new Project({
 		name: "Picto",
