@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import openLink from '../openLink';
+import openLink from '../openLink.js';
 import CenteredCard from './CenteredCard.vue';
 import LinkCard from './LinkCard.vue';
 </script>

@@ -4,8 +4,8 @@ import JLongHeader from './components/JLongHeader.vue';
 import ScrollHint from './components/ScrollHint.vue';
 import BioSection from './components/BioSection.vue';
 import ProjectSection from './components/ProjectSection.vue';
-import { Tags } from './Tag';
-import { Projects } from './Project';
+import { Tags } from './Tag.js';
+import { Projects } from './Project.js';
 
 let headerCollapsed = ref(false)
 

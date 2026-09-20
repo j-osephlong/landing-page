@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 import { computed, ref } from 'vue';
-import { Project } from '../Project';
-import { Tag } from '../Tag';
+import { Project } from '../Project.js';
+import { Tag } from '../Tag.js';
 import ProjectCard from './ProjectCard.vue';
 import CenteredCard from './CenteredCard.vue';
 

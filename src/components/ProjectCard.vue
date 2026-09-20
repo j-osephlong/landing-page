@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import openLink from '../openLink';
-import { Project } from '../Project';
+import openLink from '../openLink.js';
+import { Project } from '../Project.js';
 import CardButton from './CardButton.vue';
 
 defineProps<{ project: Project }>()

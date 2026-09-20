@@ -1,5 +1,5 @@
-import { Skill, Skills } from "./Skill";
-import { Tag, Tags } from "./Tag";
+import { Skill, Skills } from "./Skill.js";
+import { Tag, Tags } from "./Tag.js";
 
 interface ProjectParameters {
 	name?: string;
