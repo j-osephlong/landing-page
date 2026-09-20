@@ -39,8 +39,8 @@ let isExpanded = ref(false)
             <CardButton @click="() => { isExpanded = !isExpanded }" v-if="project.skills.length > 0">
                 {{ !isExpanded ? "Show Skills Used" : "Show Less" }}
             </CardButton>
-            <CardButton @click="() => { if (project.link) openLink(project.link) }">
-                Check it Out
+            <CardButton v-if="project.githubLink" @click="() => { if (project.githubLink) openLink(project.githubLink) }">
+                Github
             </CardButton>
             <CardButton v-if="project.secondaryLinkName != undefined"
                 @click="() => { if (project.secondaryLinkHref) openLink(project.secondaryLinkHref) }">

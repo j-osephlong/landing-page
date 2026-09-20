@@ -4,7 +4,7 @@ import { Tag, Tags } from "./Tag";
 interface ProjectParameters {
 	name?: string;
 	description?: string;
-	link?: string;
+	githubLink?: string;
 	bgColorHex?: string;
 	fgColorHex?: string;
 	skills?: Skill[];
@@ -16,7 +16,7 @@ interface ProjectParameters {
 export class Project {
 	name: string;
 	description: string;
-	link?: string;
+	githubLink?: string;
 	bgColorHex: string;
 	fgColorHex: string;
 	skills: Skill[];
@@ -27,7 +27,7 @@ export class Project {
 	constructor({
 		name = "Not a real project 🤷",
 		description = "Unset description",
-		link = undefined,
+		githubLink = undefined,
 		bgColorHex = "#658E9C",
 		fgColorHex = "#ffffff",
 		skills = [],
@@ -37,7 +37,7 @@ export class Project {
 	}: ProjectParameters) {
 		this.name = name;
 		this.description = description;
-		this.link = link;
+		this.githubLink = githubLink;
 		this.bgColorHex = bgColorHex;
 		this.fgColorHex = fgColorHex;
 		this.skills = skills;
@@ -49,17 +49,46 @@ export class Project {
 
 let Projects: Project[] = [
 	new Project({
-		name: "micCheck",
-		description: `micCheck is an audio capture and organization app written for Android`,
+		name: "Coord OCR",
+		description:
+			"Coord OCR is a tool that allows one to drag and drop a PDF or image, draw a box around a table, and get a csv of the table contents. All processing is done on-device.",
 		skills: [
-			Skills.jetpackCompose,
-			Skills.material3,
-			Skills.micCheckServices,
+			Skills.TS,
+			Skills.githubActions,
+			Skills.githubPages,
 		],
-		tags: [Tags.android, Tags.playstore],
-		bgColorHex: "#F0736A",
-		fgColorHex: "#ffffff",
-		link: "https://play.google.com/store/apps/details?id=com.jlong.miccheck",
+		tags: [Tags.webDev],
+		bgColorHex: "#2A4D14",
+		// fgColorHex: "#000000",
+		githubLink: "https://github.com/j-osephlong/coord-ocr",
+		secondaryLinkHref: "https://github.com/j-osephlong/coord-ocr",
+		secondaryLinkName: "Check it out",
+	}),
+	new Project({
+		name: "MaplibreGLGroupedLayersControl",
+		description:
+			"A layers control for maplibre-gl js that adds the concept of groups.",
+		skills: [
+			Skills.maplibregl,
+			Skills.TS,
+		],
+		tags: [Tags.GIS, Tags.webDev],
+		bgColorHex: "#2596BE",
+		// fgColorHex: "#000000",
+		githubLink: "https://github.com/j-osephlong/MaplibreGLGroupedLayersControl",
+	}),
+	new Project({
+		name: "MaplibreGLFilterLegend",
+		description:
+			"A maplibregl-js plugin that adds a legend control for maplibre-gl adding a legend entries control visible features using filter expressions.",
+		skills: [
+			Skills.maplibregl,
+			Skills.TS,
+		],
+		tags: [Tags.GIS, Tags.webDev],
+		bgColorHex: "#2596BE",
+		// fgColorHex: "#000000",
+		githubLink: "https://github.com/j-osephlong/MaplibreGLFilterLegend",
 	}),
 	new Project({
 		name: "microPictochat",
@@ -70,13 +99,14 @@ let Projects: Project[] = [
 			Skills.githubPages,
 			Skills.pwa,
 			Skills.githubActions,
+			Skills.TS,
 		],
 		tags: [Tags.reactJS, Tags.webDev],
 		bgColorHex: "#40476D",
 		// fgColorHex: "#000000",
-		link: "https://j-osephlong.github.io/microPictochat",
-		secondaryLinkName: "GitHub",
-		secondaryLinkHref: "https://github.com/j-osephlong/microPictochat",
+		githubLink: "https://github.com/j-osephlong/microPictochat",
+		secondaryLinkName: "Check it out",
+		secondaryLinkHref: "https://j-osephlong.github.io/microPictochat",
 	}),
 	new Project({
 		name: "landing-page",
@@ -85,7 +115,7 @@ let Projects: Project[] = [
 		fgColorHex: "#000000",
 		skills: [Skills.vueJS, Skills.githubPages],
 		tags: [Tags.webDev, Tags.vueJS],
-		link: "https://github.com/j-osephlong/landing-page",
+		githubLink: "https://github.com/j-osephlong/landing-page",
 	}),
 	new Project({
 		name: "InfoDroid",
@@ -97,10 +127,10 @@ let Projects: Project[] = [
 			Skills.django,
 			Skills.reverseGeocode,
 		],
-		tags: [Tags.school, Tags.serverDev, Tags.android],
+		tags: [Tags.school, Tags.serverDev, Tags.android, Tags.GIS],
 		bgColorHex: "#60D394",
 		fgColorHex: "#000000",
-		link: "https://github.com/j-osephlong/InfoDroid",
+		githubLink: "https://github.com/j-osephlong/InfoDroid",
 	}),
 	new Project({
 		name: "SignalMapper",
@@ -109,7 +139,7 @@ let Projects: Project[] = [
 		tags: [Tags.school, Tags.android],
 		skills: [Skills.jetpackCompose, Skills.material3],
 		bgColorHex: "#2A4D14",
-		link: "https://github.com/j-osephlong/SignalMapper",
+		githubLink: "https://github.com/j-osephlong/SignalMapper",
 	}),
 	new Project({
 		name: "Picto",
@@ -118,7 +148,7 @@ let Projects: Project[] = [
 		skills: [Skills.vueJS, Skills.flask, Skills.sql],
 		tags: [Tags.webDev, Tags.serverDev, Tags.vueJS],
 		bgColorHex: "#A06B9A",
-		link: "https://github.com/j-osephlong/Picto",
+		githubLink: "https://github.com/j-osephlong/Picto",
 	}),
 	new Project({
 		name: "j-LC3",
@@ -126,7 +156,7 @@ let Projects: Project[] = [
 		bgColorHex: "#AEE3EA",
 		fgColorHex: "#000000",
 		tags: [Tags.lowLevel],
-		link: "https://github.com/j-osephlong/j-LC3",
+		githubLink: "https://github.com/j-osephlong/j-LC3",
 	}),
 	new Project({
 		name: "Blume",
@@ -135,7 +165,7 @@ let Projects: Project[] = [
 		bgColorHex: "#FCBA9C",
 		fgColorHex: "#000000",
 		tags: [Tags.lowLevel],
-		link: "https://github.com/j-osephlong/Blume",
+		githubLink: "https://github.com/j-osephlong/Blume",
 	}),
 	new Project({
 		name: "Hotel-Server",
@@ -143,14 +173,14 @@ let Projects: Project[] = [
 			"A hotel booking/management website/backend server, written for CS2043.",
 		skills: [Skills.flask, Skills.sql],
 		tags: [Tags.group, Tags.school, Tags.serverDev],
-		link: "https://github.com/j-osephlong/Hotel-Project",
+		githubLink: "https://github.com/j-osephlong/Hotel-Project",
 	}),
 	new Project({
 		name: "ScanTron IDE",
 		description: "A Java IDE written for CS1083.",
 		bgColorHex: "#C98986",
 		tags: [Tags.school, Tags.group],
-		link: "https://github.com/scanTronTeam3/scanTronIDE",
+		githubLink: "https://github.com/scanTronTeam3/scanTronIDE",
 	}),
 ];
 

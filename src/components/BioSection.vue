@@ -13,15 +13,20 @@ import LinkCard from './LinkCard.vue';
 
         <CenteredCard>
             <div id="bio">
-                I'm a newly graduated Computer Science student who studied at University
-                of New Brunswick Saint John
+                I'm both a hobbyist and full-time professional software developer with a love for
+                the frontend and the backend.
             </div>
         </CenteredCard>
 
         <CenteredCard>
             <div id="bio">
-                I'm both a hobbyist and professional software developer with a love for
-                the frontend and the backend.
+                Currently developing web-based GIS and project management software for DMSE.
+            </div>
+        </CenteredCard>
+
+        <CenteredCard>
+            <div id="bio">
+                I studied Computer Science at Universiy of New Brunswick (UNB).
             </div>
         </CenteredCard>
 
@@ -29,17 +34,13 @@ import LinkCard from './LinkCard.vue';
             <div id="bio">
                 I also
                 <span style="font-size: 0.6rem; font-style: oblique">barely</span> play
-                the piano.
+                the piano.<br>
+                <small>2026 Update:</small> And the guitar!
             </div>
         </CenteredCard>
 
         <LinkCard icon-class="fa-github" @click="openLink('https://github.com/j-osephlong/')">
             Check out my <span style="font-weight: 500">GitHub</span>
-        </LinkCard>
-
-        <LinkCard icon-class="fa-google-play"
-            @click="openLink('https://play.google.com/store/apps/details?id=com.jlong.miccheck')">
-            Get <span style="font-weight: 500">micCheck</span> on Google Play
         </LinkCard>
     </div>
 </template>

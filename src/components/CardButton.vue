@@ -14,6 +14,7 @@
     transition: background-color .25s;
 
     margin-right: 3%;
+    cursor: pointer;
 }
 
 .button:hover {

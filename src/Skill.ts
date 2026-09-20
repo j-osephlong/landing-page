@@ -27,6 +27,11 @@ let Skills = {
 		description: "Reactive and modern Javascript framework.",
 		link: "https://vuejs.org",
 	},
+	TS: {
+		name: "Typescript",
+		description: "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+		link: "https://www.typescriptlang.org/",
+	},
 	react: {
 		name: "React JS",
 		description: "Reactive and modern Javascript framework.",
@@ -76,6 +81,11 @@ let Skills = {
 		name: "SQL(lite) Query Language",
 		description: "Database query language.",
 		link: "https://www.sqlite.org/index.html",
+	},
+	maplibregl: {
+		name: "MaplibreGL",
+		description: "Interactive vector tile maps in the browser.",
+		link: "https://maplibre.org/maplibre-gl-js/docs/",
 	},
 };
 

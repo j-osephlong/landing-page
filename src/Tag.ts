@@ -12,6 +12,7 @@ let Tags = {
 	group: { name: "Group Project" },
 	serverDev: { name: "Server Development" },
 	lowLevel: { name: "Low Level Programming" },
+	GIS: { name: "GIS-Related" },
 };
 
 export { Tags };
