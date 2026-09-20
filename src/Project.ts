@@ -61,7 +61,7 @@ let Projects: Project[] = [
 		bgColorHex: "#2A4D14",
 		// fgColorHex: "#000000",
 		githubLink: "https://github.com/j-osephlong/coord-ocr",
-		secondaryLinkHref: "https://github.com/j-osephlong/coord-ocr",
+		secondaryLinkHref: "https://j-osephlong.github.io/coord-ocr/",
 		secondaryLinkName: "Check it out",
 	}),
 	new Project({
